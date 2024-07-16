@@ -1,5 +1,11 @@
 from django.contrib import admin
 from .models import Services
+from django_summernote.admin import SummernoteModelAdmin
+
 # Register your models here.
 
-admin.site.register(Services)
+
+class ModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
+    summernote_fields = '__all__'
+
+admin.site.register(Services,ModelAdmin)
