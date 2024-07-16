@@ -83,7 +83,7 @@
                                 <div class="dropdown-menu m-0 bg-primary">
                                     <a href="{% url 'blinds_list'%}" class="dropdown-item">all</a>
                                     {% for blind in blinds_nav %}
-                                    <a href="#" class="dropdown-item">{{blind.title}}</a>
+                                    <a href="{% url 'blinds_details' blind.slug %}" class="dropdown-item">{{blind.title}}</a>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                 <div class="dropdown-menu m-0 bg-primary">
                                     <a href="{% url 'curtains_list'%}" class="dropdown-item">all</a>
                                     {% for curtain in curtains_nav %}
-                                    <a href="#" class="dropdown-item">{{curtain.title}}</a>
+                                    <a href="{% url 'curtains_details' curtain.slug %}" class="dropdown-item">{{curtain.title}}</a>
                                     {% endfor %}
                                 </div>
                             </div>
