@@ -8,6 +8,7 @@ class Blinds(models.Model):
     description = models.TextField(("description"),max_length=100000)
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     image = models.ImageField(upload_to='blinds/')
+    slug = models.SlugField(null=True,blank=True)
 
     def save(self,*args, **kwargs):
         if not self.slug:
@@ -33,6 +34,7 @@ class Curtains(models.Model):
     description = models.TextField(("description"),max_length=100000)
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     image = models.ImageField(upload_to='curtains/')
+    slug = models.SlugField(null=True,blank=True)
 
     def save(self,*args, **kwargs):
         if not self.slug:
@@ -59,6 +61,7 @@ class MotorizedBlinds(models.Model):
     description = models.TextField(("description"),max_length=100000)
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     image = models.ImageField(upload_to='motorized-blinds/')
+    slug = models.SlugField(null=True,blank=True)
 
     def save(self,*args, **kwargs):
         if not self.slug:
@@ -84,6 +87,7 @@ class Commercial(models.Model):
     description = models.TextField(("description"),max_length=100000)
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     image = models.ImageField(upload_to='commercial/')
+    slug = models.SlugField(null=True,blank=True)
 
     def save(self,*args, **kwargs):
         if not self.slug:

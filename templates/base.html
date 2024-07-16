@@ -75,27 +75,25 @@
                     </button>
                     <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
                         <div class="navbar-nav ms-auto">
-                            <a href="#" class="nav-item nav-link active">MOTORIZED BLINDS</a>
-                            <a href="#" class="nav-item nav-link">COMMERCIAL</a>
+                            <a href="{% url 'motorizedblinds'%}" class="nav-item nav-link active">MOTORIZED BLINDS</a>
+                            <a href="{% url 'commercial_list'%}" class="nav-item nav-link">COMMERCIAL</a>
                             <a href="#" class="nav-item nav-link">RECENT WORKS</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blinds</a>
+                                <a href="{% url 'blinds_list'%}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blinds</a>
                                 <div class="dropdown-menu m-0 bg-primary">
-                                    <a href="#" class="dropdown-item">type 1</a>
-                                    <a href="#" class="dropdown-item">type 2</a>
-                                    <a href="#" class="dropdown-item">type 3</a>
-                                    <a href="#" class="dropdown-item">type 4</a>
-                                    <a href="#" class="dropdown-item">type 5</a>
+                                    <a href="{% url 'blinds_list'%}" class="dropdown-item">all</a>
+                                    {% for blind in blinds_nav %}
+                                    <a href="#" class="dropdown-item">{{blind.title}}</a>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">CURTAINS</a>
+                                <a href="{% url 'curtains_list'%}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">CURTAINS</a>
                                 <div class="dropdown-menu m-0 bg-primary">
-                                    <a href="#" class="dropdown-item">type 1</a>
-                                    <a href="#" class="dropdown-item">type 2</a>
-                                    <a href="#" class="dropdown-item">type 3</a>
-                                    <a href="#" class="dropdown-item">type 4</a>
-                                    <a href="#" class="dropdown-item">type 5</a>
+                                    <a href="{% url 'curtains_list'%}" class="dropdown-item">all</a>
+                                    {% for curtain in curtains_nav %}
+                                    <a href="#" class="dropdown-item">{{curtain.title}}</a>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <a href="blog.html" class="nav-item nav-link">Blog</a>
