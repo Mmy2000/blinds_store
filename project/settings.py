@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'contact',
     'service',
+    'about',
     'django_summernote',
 ]
 
@@ -72,6 +73,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'products.context.nav',
+                'about.about_context.about',
             ],
         },
     },
