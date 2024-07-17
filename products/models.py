@@ -26,6 +26,10 @@ class BlindImages(models.Model):
     blind = models.ForeignKey(Blinds,related_name='blind_images',on_delete=models.CASCADE)
     image = models.ImageField(upload_to='blindimages/')
 
+    class Meta:
+        verbose_name = ("Blind Images")
+        verbose_name_plural = ("Blind Images")
+
     def __str__(self):
         return str(self.blind)
     
@@ -51,6 +55,10 @@ class Curtains(models.Model):
 class CurtainsImages(models.Model):
     curtains = models.ForeignKey(Curtains,related_name='curtains_images',on_delete=models.CASCADE)
     image = models.ImageField(upload_to='curtainsimages/')
+
+    class Meta:
+        verbose_name = ("Curtains Images")
+        verbose_name_plural = ("Curtains Images")
 
     def __str__(self):
         return str(self.curtains)
@@ -79,6 +87,10 @@ class MotorizedBlindsImages(models.Model):
     motorizedblinds = models.ForeignKey(MotorizedBlinds,related_name='motorizedblinds_images',on_delete=models.CASCADE)
     image = models.ImageField(upload_to='motorizedblindsimages/')
 
+    class Meta:
+        verbose_name = ("MotorizedBlinds Images")
+        verbose_name_plural = ("MotorizedBlinds Images")
+
     def __str__(self):
         return str(self.motorizedblinds)
     
@@ -104,6 +116,10 @@ class Commercial(models.Model):
 class CommercialImages(models.Model):
     commercial = models.ForeignKey(Commercial,related_name='commercial_images',on_delete=models.CASCADE)
     image = models.ImageField(upload_to='commercialimages/')
+
+    class Meta:
+        verbose_name = ("Commercial Images")
+        verbose_name_plural = ("Commercial Images")
 
     def __str__(self):
         return str(self.commercial)
