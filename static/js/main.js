@@ -96,3 +96,19 @@
 
 })(jQuery);
 
+$("#newsletter_form").submit(function (e) {
+    e.preventDefault();
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: form.serialize(),
+        success: function (data) {
+            $('#main_form_div').fadeOut('slow', function () {
+                $('#success_div').fadeIn('slow');
+            });
+        }
+    });
+});

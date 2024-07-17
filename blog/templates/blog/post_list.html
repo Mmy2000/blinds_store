@@ -34,7 +34,7 @@ Blogs
                                 <span class="text-dark"><i class="fas fa-calendar-alt me-2"></i>{{blog.created_at|date:'F j , Y'}}</span>
                             </div>
                             <div class="px-4 pb-0">
-                                <h4>{{blog}}</h4>
+                                <h4>{{blog|truncatewords:3}}</h4>
                                 <p>{{blog.description|safe|truncatewords:35}}</p>
                             </div>
                             <div class="p-4 py-2 d-flex justify-content-between bg-primary rounded-bottom blog-btn">
