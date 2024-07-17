@@ -781,3 +781,7 @@
     height: 90vh !important;
     object-fit: contain;
 }
+.logo-style{
+    width: 150px;
+    object-fit: contain;
+}

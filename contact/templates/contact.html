@@ -70,11 +70,10 @@ Contact
                     <div class="ms-3 contact-link">
                         <h4 class="text-dark">fallow Us</h4>
                         <div class="d-flex justify-content-center">
-                            <a class="pe-2" href="#"><i class="fab fa-facebook-f text-dark"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-twitter text-dark"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-instagram text-dark"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-linkedin-in text-dark"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-youtube text-dark"></i></a>
+                            <a class="pe-2" href="{{myfooter.fb_link}}"><i class="fab fa-facebook-f text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.tiktok_link}}"><i class="fab fa-tiktok text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.instagram_link}}"><i class="fab fa-instagram text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.youtube_link}}"><i class="fab fa-youtube text-dark"></i></a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +87,7 @@ Contact
                     <div class="ms-3 contact-link">
                         <h4 class="text-dark">Address</h4>
                         <a href="#">
-                            <h5 class="text-dark d-inline fs-6">123 Street, CA, USA</h5>
+                            <h5 class="text-dark d-inline fs-6">{{myfooter.address}}</h5>
                         </a>
                     </div>
                 </div>
@@ -96,12 +95,13 @@ Contact
             <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="d-flex bg-light p-3 rounded contact-btn-link">
                     <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3"
-                        style="width: 64px; height: 64px;">
+                        style="width: 74px; height: 64px;">
                         <i class="fa fa-phone text-dark"></i>
                     </div>
                     <div class="ms-3 contact-link">
                         <h4 class="text-dark">Call Us</h4>
-                        <a class="h5 text-dark fs-6" href="tel:+0123456789">+012 3456 7890</a>
+                        <a class="h6 text-dark fs-6" href="tel:{{myfooter.phone1}}">{{myfooter.phone1}}</a>
+                        <a class="h6 text-dark fs-6" href="tel:{{myfooter.phone1}}">{{myfooter.phone2}}</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ Contact
                     </div>
                     <div class="ms-3 contact-link">
                         <h4 class="text-dark">Email Us</h4>
-                        <a class="h5 text-dark fs-6" href="#">info@example.com</a>
+                        <a class="h5 text-dark fs-6" href="#">{{myfooter.email1}}</a>
                     </div>
                 </div>
             </div>

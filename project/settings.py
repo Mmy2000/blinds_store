@@ -74,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'products.context.nav',
                 'about.about_context.about',
+                'settings.settings_context.myfooter',
             ],
         },
     },

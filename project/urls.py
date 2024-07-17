@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from settings.views import home
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,7 +26,7 @@ urlpatterns = [
     path('about/',include('about.urls')),
     path('services/',include('service.urls')),
     path('contact/',include('contact.urls')),
-    path('' , home , name='home')
+    path('',include('settings.urls')),
 ]
 urlpatterns +=  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
