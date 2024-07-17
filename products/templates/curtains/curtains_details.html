@@ -21,7 +21,7 @@
     <div class="row">
         <img class="w-100 commercial-img" src="{{curtains_detail.image.url}}" alt="Image">
         <p class="fs-5 mt-4" style="text-align: justify;">{{curtains_detail.description|safe}}</p>
-        {% for image in curtains_detail.blind_images.all %}
+        {% for image in curtains_detail.curtains_images.all %}
         <div class="col-md-3  g-4">
             <div>
                 <img class="w-100"src="{{image.image.url}}">
