@@ -777,3 +777,7 @@
 }
 
 /*** Copywright End ***/
+.commercial-img{
+    height: 90vh !important;
+    object-fit: contain;
+}

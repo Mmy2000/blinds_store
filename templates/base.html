@@ -75,11 +75,11 @@
                     </button>
                     <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
                         <div class="navbar-nav ms-auto">
-                            <a href="{% url 'motorizedblinds'%}" class="nav-item nav-link active">MOTORIZED BLINDS</a>
-                            <a href="{% url 'commercial_list'%}" class="nav-item nav-link">COMMERCIAL</a>
-                            <a href="#" class="nav-item nav-link">RECENT WORKS</a>
+                            <a href="{% url 'motorizedblinds'%}" class="nav-item nav-link {% if request.path == '/products/motorizedblind/' %}active{% endif %} ">MOTORIZED BLINDS</a>
+                            <a href="{% url 'commercial_list'%}" class="nav-item nav-link {% if request.path == '/products/commercial/' %}active{% endif %} ">COMMERCIAL</a>
+                            
                             <div class="nav-item dropdown">
-                                <a href="{% url 'blinds_list'%}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blinds</a>
+                                <a href="{% url 'blinds_list'%}" class="nav-link {% if request.path == '/products/blinds/' %}active{% endif %} dropdown-toggle" data-bs-toggle="dropdown">Blinds</a>
                                 <div class="dropdown-menu m-0 bg-primary">
                                     <a href="{% url 'blinds_list'%}" class="dropdown-item">all</a>
                                     {% for blind in blinds_nav %}
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="{% url 'curtains_list'%}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">CURTAINS</a>
+                                <a href="{% url 'curtains_list'%}" class="nav-link {% if request.path == '/products/curtains/' %}active{% endif %} dropdown-toggle" data-bs-toggle="dropdown">CURTAINS</a>
                                 <div class="dropdown-menu m-0 bg-primary">
                                     <a href="{% url 'curtains_list'%}" class="dropdown-item">all</a>
                                     {% for curtain in curtains_nav %}
@@ -96,9 +96,10 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                            <a href="blog.html" class="nav-item nav-link">Blog</a>
-                            <a href="{% url 'about'%}" class="nav-item nav-link">About</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'services'%}" class="nav-item nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
+                            <a href="blog.html" class="nav-item nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
+                            <a href="{% url 'about'%}" class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+                            <a href="contact.html" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
                         </div>
                     </div>
                 </nav>
