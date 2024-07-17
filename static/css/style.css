@@ -861,3 +861,42 @@ form .form-control {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
+
+.block-21 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.block-21 .blog-img {
+    width: 80px; /* Adjust the width as necessary */
+    height: 80px; /* Adjust the height as necessary */
+    overflow: hidden;
+    border-radius: 50%; /* Makes the image rounded */
+}
+
+.block-21 .blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.block-21 .text {
+    margin-left: 10px;
+}
+
+.block-21 .text .heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.block-21 .text .meta {
+    display: flex;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.block-21 .text .meta div {
+    margin-right: 10px;
+}

@@ -63,20 +63,22 @@
             </div>
 
             <div class="sidebar-box ftco-animate">
-              <h3>Recent Blog</h3>
-              {% for post in recent_posts  %}
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" href="{{post.get_absolute_url}}" style="background-image: url({{post.image.url}});"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="{{post.get_absolute_url}}">{{post}}</a></h3>
-                  <div class="meta">
-                    <div><a href="{{post.get_absolute_url}}"><span class="icon-calendar"></span>{{post.created_at | date:'F j , Y'}}</a></div>
-                    <div><a href="{{post.get_absolute_url}}"><span class="icon-person"></span>{{post.auther}}</a></div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
+    <h3>Recent Blog</h3>
+    {% for post in recent_posts %}
+    <div class="block-21 mb-4 d-flex">
+        <a class="blog-img mr-4" href="{{post.get_absolute_url}}">
+            <img src="{{post.image.url}}" alt="post image" class="recent-post-img">  <!-- Ensure the class matches your CSS -->
+        </a>
+        <div class="text">
+            <h3 class="heading"><a href="{{post.get_absolute_url}}">{{post}}</a></h3>
+            <div class="meta">
+                <div><a href="{{post.get_absolute_url}}"><span class="icon-calendar"></span>{{post.created_at | date:'F j , Y'}}</a></div>
+                <div><a href="{{post.get_absolute_url}}"><span class="icon-person"></span>{{post.auther}}</a></div>
             </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
             <div class="sidebar-box ftco-animate">
               <h3>Tag Cloud</h3>
