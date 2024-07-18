@@ -76,6 +76,7 @@ TEMPLATES = [
                 'products.context.nav',
                 'about.about_context.about',
                 'settings.settings_context.myfooter',
+                'service.service_context.service_footer',
             ],
         },
     },

@@ -8,6 +8,7 @@ class Services(models.Model):
     icon = models.CharField(max_length=30)
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     description = models.TextField(("description"),max_length=100000,null=True,blank=True)
+    short_description = models.CharField( max_length=100)
     slug = models.SlugField(null=True,blank=True)
 
     def save(self,*args, **kwargs):
