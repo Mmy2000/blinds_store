@@ -112,3 +112,7 @@ $("#newsletter_form").submit(function (e) {
         }
     });
 });
+
+setTimeout(function(){
+    $('#message').fadeOut('slow')
+},4000)
