@@ -92,10 +92,10 @@
                                 class="nav-link {% if request.path == '/products/blinds/' %}active{% endif %} dropdown-toggle"
                                 data-bs-toggle="dropdown">Blinds</a>
                             <div class="dropdown-menu m-0 bg-primary">
-                                <a href="{% url 'blinds_list'%}" class="dropdown-item">all</a>
+                                <a href="{% url 'blinds_list'%}" class="dropdown-item text-center">all</a>
                                 {% for blind in blinds_nav %}
                                 <a href="{% url 'blinds_details' blind.slug %}"
-                                    class="dropdown-item">{{blind.title}}</a>
+                                    class="dropdown-item text-center">{{blind.title}}</a>
                                 {% endfor %}
                             </div>
                         </div>
@@ -104,10 +104,10 @@
                                 class="nav-link {% if request.path == '/products/curtains/' %}active{% endif %} dropdown-toggle"
                                 data-bs-toggle="dropdown">CURTAINS</a>
                             <div class="dropdown-menu m-0 bg-primary">
-                                <a href="{% url 'curtains_list'%}" class="dropdown-item">all</a>
+                                <a href="{% url 'curtains_list'%}" class="dropdown-item text-center">all</a>
                                 {% for curtain in curtains_nav %}
                                 <a href="{% url 'curtains_details' curtain.slug %}"
-                                    class="dropdown-item">{{curtain.title}}</a>
+                                    class="dropdown-item text-center">{{curtain.title}}</a>
                                 {% endfor %}
                             </div>
                         </div>
