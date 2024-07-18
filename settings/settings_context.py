@@ -1,5 +1,6 @@
-from .models import Settings
+from .models import Settings , Images
 
 def myfooter(request):
     myfooter = Settings.objects.last()
-    return{'myfooter':myfooter}
+    images = Images.objects.filter(settings=myfooter)
+    return{'myfooter':myfooter, 'images': images}

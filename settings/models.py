@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
+
 
 # Create your models here.
 class Settings(models.Model):
@@ -35,3 +37,16 @@ class NewsLitter(models.Model):
 
     def __str__(self):
         return self.email
+    
+class Images(models.Model):
+    title = models.CharField(_("title"), max_length=150 , help_text=_('this title is display in slider in home page'))
+    settings = models.ForeignKey(Settings, related_name='home_image',verbose_name="home_image", on_delete=models.CASCADE)
+    description = models.TextField(max_length=1000)
+    image = models.ImageField(_("image"), upload_to='homeImages/' , help_text='this image is display in slider in home page')
+
+    class Meta:
+        verbose_name = _("Home Images")
+        verbose_name_plural = _("Home Images")
+
+    def __str__(self):
+        return self.title
