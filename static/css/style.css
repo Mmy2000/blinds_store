@@ -923,7 +923,6 @@ form .form-control {
 .image-container .image {
     width: 100%;
     object-fit: contain;
-    height: 300px;
     transition: transform 0.3s ease-in-out;
 }
 
