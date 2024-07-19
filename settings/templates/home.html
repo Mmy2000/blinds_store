@@ -80,17 +80,14 @@ Home
         </div>
         <div class="row g-5">
             {% for service in services %}
-            <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
-                <div class="bg-light rounded p-5 services-item">
-                    <div class="d-flex" style="align-items: center; justify-content: center;">
-                        <div class="mb-4 rounded-circle services-inner-icon">
-                            <i class="{{service.icon}} fa-3x text-primary"></i>
-                        </div>
+            <div class="col-xxl-3 col-lg-6  overflow-hidden col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                <div class="image-container overflow-hidden">
+                    <img src="{{service.cover_image.url}}" alt="Image" class="image">
+                    <div class="overlay">
+                        <h2 class="title">{{service}}</h2>
+                        <p class="fs-5 text-light px-2 pt-2">{{service.short_description}}</p>
+                        <a href="{% url 'service_details' service.slug %}" class="btn btn-primary read-more">Read More</a>
                     </div>
-                    <h4>{{service}}</h4>
-                    <p class="fs-5">{{service.short_description}} </p>
-                    <a href="{% url 'service_details' service.slug %}"
-                        class="btn btn-primary border-0 rounded-pill px-4 py-3">Learn More</a>
                 </div>
             </div>
             {% endfor %}

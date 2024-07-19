@@ -5,7 +5,7 @@ from django.utils.text import slugify
 # Create your models here.
 class Services(models.Model):
     name = models.CharField( max_length=50)
-    icon = models.CharField(max_length=30)
+    cover_image = models.ImageField(upload_to='services/' , default='')
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     description = models.TextField(("description"),max_length=100000,null=True,blank=True)
     short_description = models.CharField( max_length=100)

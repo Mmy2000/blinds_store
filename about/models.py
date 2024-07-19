@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class About(models.Model):
-    short_description = models.TextField(("description"),max_length=1000)
+    short_description = models.TextField(("short description"),max_length=1000)
     description = models.TextField(("description"),max_length=100000)
 
     class Meta:
