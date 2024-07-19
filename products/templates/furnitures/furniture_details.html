@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{{furniture_details.title}}
+{% endblock title %}
+{% block body %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">{{furniture_details.title}}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item text-white" aria-current="page">{{furniture_details.title}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<div class="container text-center py-5">
+    <div class="row">
+        <img class="w-100 commercial-img" src="{{furniture_details.image.url}}" alt="Image">
+        <p class="fs-5 mt-4" style="text-align: justify;">{{furniture_details.description|safe}}</p>
+        {% for image in furniture_details.furniture_images.all %}
+        <div class="col-md-3  g-4">
+            <div>
+                <img class="w-100"src="{{image.image.url}}">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock body %}

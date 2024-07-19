@@ -123,3 +123,78 @@ class CommercialImages(models.Model):
 
     def __str__(self):
         return str(self.commercial)
+    
+
+class Furniture(models.Model):
+    title = models.CharField(max_length=5000)
+    description = models.TextField(("description"),max_length=100000)
+    created_at = models.DateTimeField( ("created_at"),default=timezone.now)
+    image = models.ImageField(upload_to='Furniture/')
+    slug = models.SlugField(null=True,blank=True)
+    category = models.ForeignKey("Category",related_name="furniture_category", verbose_name=("Furniture Category"), on_delete=models.CASCADE)
+
+    def save(self,*args, **kwargs):
+        if not self.slug:
+            self.slug=slugify(self.title)
+        super(Furniture,self).save(*args,**kwargs)
+
+    class Meta:
+        verbose_name = ("Furnitures")
+        verbose_name_plural = ("Furnitures")
+
+    def __str__(self):
+        return self.title
+    
+class FurnitureImages(models.Model):
+    furniture = models.ForeignKey(Furniture,related_name='furniture_images',on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='furnitureimages/')
+
+    class Meta:
+        verbose_name = ("Furniture Images ")
+        verbose_name_plural = ("Furniture Images ")
+
+    def __str__(self):
+        return str(self.furniture)
+
+    
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = ("Furniture Category")
+        verbose_name_plural = ("Furniture Category")
+
+    def __str__(self):
+        return self.name
+    
+
+    
+class Accessories(models.Model):
+    title = models.CharField(max_length=5000)
+    description = models.TextField(("description"),max_length=100000)
+    created_at = models.DateTimeField( ("created_at"),default=timezone.now)
+    image = models.ImageField(upload_to='accessories/')
+    slug = models.SlugField(null=True,blank=True)
+
+    def save(self,*args, **kwargs):
+        if not self.slug:
+            self.slug=slugify(self.title)
+        super(Accessories,self).save(*args,**kwargs)
+
+    class Meta:
+        verbose_name = ("Accessories")
+        verbose_name_plural = ("Accessories")
+
+    def __str__(self):
+        return self.title
+
+class AccessoriesImages(models.Model):
+    accessories = models.ForeignKey(Accessories,related_name='accessories_images',on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='accessoriesimages/')
+
+    class Meta:
+        verbose_name = ("Accessories Images ")
+        verbose_name_plural = ("Accessories Images ")
+
+    def __str__(self):
+        return str(self.accessories)

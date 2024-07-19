@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Blinds , BlindImages , Commercial , CommercialImages , Curtains , CurtainsImages , MotorizedBlinds , MotorizedBlindsImages
+from .models import Blinds , BlindImages , Commercial , CommercialImages , Curtains , CurtainsImages , MotorizedBlinds , MotorizedBlindsImages , Furniture , Accessories
 
 # Create your views here.
 
@@ -45,3 +45,24 @@ def motorizedblinds(request):
         'motorizedblind':motorizedblind
     }
     return render(request , 'motorizedblind/motorizedblind.html' , context)
+
+def furniture_list(request):
+    furnitures = Furniture.objects.all()
+    context = {
+        'furnitures':furnitures
+    }
+    return render(request , 'furnitures/furnitures.html' , context)
+
+def furniture_details(request , slug):
+    furniture_details = Furniture.objects.get(slug=slug)
+    context = {
+        'furniture_details':furniture_details
+    }
+    return render(request , 'furnitures/furniture_details.html' , context)
+
+def accessory_list(request):
+    accessories = Accessories.objects.last()
+    context = {
+        'accessories':accessories
+    }
+    return render(request , 'accessories/accessories.html' , context)

@@ -7,4 +7,7 @@ urlpatterns = [
     path('curtains/<str:slug>' , views.curtains_details , name='curtains_details'),
     path('commercial/' , views.commercial_list , name='commercial_list'),
     path('motorizedblind/' , views.motorizedblinds , name='motorizedblinds'),
+    path('furnitures/' , views.furniture_list , name='furniture_list'),
+    path('furnitures/<str:slug>' , views.furniture_details , name='furniture_details'),
+    path('accessories/' , views.accessory_list , name='accessory_list'),
 ]

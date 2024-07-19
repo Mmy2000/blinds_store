@@ -111,6 +111,21 @@
                                 {% endfor %}
                             </div>
                         </div>
+                        <div class="nav-item dropdown">
+                            <a href="{% url 'furniture_list'%}"
+                                class="nav-link {% if request.path == '/products/furnitures/' %}active{% endif %} dropdown-toggle"
+                                data-bs-toggle="dropdown">Furnitures</a>
+                            <div class="dropdown-menu m-0 bg-primary">
+                                <a href="{% url 'furniture_list'%}" class="dropdown-item text-center">all</a>
+                                {% for furniture in furnitures_nav %}
+                                <a href="{% url 'furniture_details' furniture.slug %}"
+                                    class="dropdown-item text-center">{{furniture.title}}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a href="{% url 'accessory_list'%}"
+                            class="nav-item nav-link {% if request.path == '/products/commercial/' %}active{% endif %} ">Accessories</a>
+                        
                         <a href="{% url 'services'%}"
                             class="nav-item nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
                         <a href="{% url 'post_list'%}"

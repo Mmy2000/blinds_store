@@ -968,7 +968,7 @@ form .form-control {
     position: relative;
     transition: all 0.3s ease-in-out;
     transform: translateX(100%);
-    color: #fff;
+    color: #000;
     font-size: 18px;
     text-decoration: none;
     background: #000;
