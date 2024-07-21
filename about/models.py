@@ -4,6 +4,7 @@ from django.db import models
 class About(models.Model):
     short_description = models.TextField(("short description"),max_length=1000)
     description = models.TextField(("description"),max_length=100000)
+    image_cover = models.ImageField(upload_to='about/')
 
     class Meta:
         verbose_name = ("About")
