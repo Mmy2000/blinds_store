@@ -103,7 +103,8 @@ Home
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
             <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Recent
                 Work</h5>
-            <h1 class="display-5">The best Blinds in Dubai</h1>
+            <h1 class="display-5">Our Recent
+                Work</h1>
         </div>
         <div class="row g-5">
             {% for blind in blinds %}
@@ -124,64 +125,7 @@ Home
     </div>
 </div>
 <!-- Blinds End -->
-<!-- Curtains Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Recent
-                Work</h5>
-            <h1 class="display-5">The best Curtains in Dubai</h1>
-        </div>
-        <div class="row g-5">
-            {% for curtain in curtains %}
-            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
-                <div class="project-item">
-                    <div class="project-left bg-dark"></div>
-                    <div class="project-right bg-dark"></div>
-                    <img src="{{curtain.image.url}}" class="img-fluid h-100" alt="img">
-                    <a href="{% url 'curtains_details' curtain.slug%}"
-                        class="fs-4 fw-bold text-center">{{curtain.title}}</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="d-flex justify-content-center">
-            <a href="{% url 'curtains_list'%}"
-                class="btn btn-primary border-0  rounded-pill px-4 py-3 mt-4 wow fadeInUp" data-wow-delay=".3s">Show
-                More</a>
-        </div>
-    </div>
-</div>
-<!-- Curtains End -->
 
-<!-- Curtains Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Furnitures</h5>
-            <h1 class="display-5">The best Furnitures in Dubai</h1>
-        </div>
-        <div class="row g-5">
-            {% for furniture in furnitures %}
-            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
-                <div class="project-item">
-                    <div class="project-left bg-dark"></div>
-                    <div class="project-right bg-dark"></div>
-                    <img src="{{furniture.image.url}}" class="img-fluid h-100" alt="img">
-                    <a href="{% url 'furniture_details' furniture.slug%}"
-                        class="fs-4 fw-bold text-center">{{furniture.title}}</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="d-flex justify-content-center">
-            <a href="{% url 'furniture_list'%}"
-                class="btn btn-primary border-0  rounded-pill px-4 py-3 mt-4 wow fadeInUp" data-wow-delay=".3s">Show
-                More</a>
-        </div>
-    </div>
-</div>
-<!-- Curtains End -->
 
 <!-- Blog Start -->
 <div class="container-fluid py-5">
@@ -218,38 +162,166 @@ Home
     </div>
 </div>
 <!-- Blog End -->
-<!-- Call To Action Start -->
-<div class="container-fluid py-5 call-to-action wow fadeInUp" data-wow-delay=".3s" style="margin: 6rem 0;">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <img src="{% static 'img/11.jpg' %}" class="img-fluid w-100 rounded-circle p-5" alt="">
-            </div>
-            <div id="main_form_div" class="col-lg-6 my-auto">
-                <div class="text-start mt-4">
-                    <h1 class="pb-4 text-white">Sign Up To Our Newsletter To Get The Latest Offers</h1>
+
+<section class="facts-section wow fadeInUp" data-wow-delay=".3s">
+        <div class="container wow fadeInUp" data-wow-delay=".3s">
+            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Facts
+            </h5>
+            <p class="fs-5 mt-2">Highly Qualified Designers and Management Team for Instant Support and Collaborative Stylish Solutions</p>
+            <div class="facts-grid wow fadeInUp" data-wow-delay=".3s">
+                <div class="fact-item">
+                    <h3 class="fact-number" id="clients">0</h3>
+                    <p class="fs-5">Clients</p>
                 </div>
-                <form id="newsletter_form" method="POST" action="{% url 'newsletters' %}">
+                <div class="fact-item">
+                    <h3 class="fact-number" id="projects">0</h3>
+                    <p class="fs-5">Projects</p>
+                </div>
+                <div class="fact-item">
+                    <h3 class="fact-number" id="hours">0</h3>
+                    <p class="fs-5">Hours of Support</p>
+                </div>
+                <div class="fact-item">
+                    <h3 class="fact-number" id="workers">0</h3>
+                    <p class="fs-5">Hard Workers</p>
+                </div>
+            </div>
+            <div class="w-75 mx-auto mt-2">
+                <img class="w-100" src="{{facts.image.url}}">
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        {% include "includes/alerts.html" %}
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Get In Touch
+            </h5>
+            <h1 class="display-5 w-50 mx-auto">Contact for any query</h1>
+        </div>
+        <div class="row g-5 mb-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="h-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001583.639214438!2d-78.4099249913019!3d42.71993723844549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1687175686342!5m2!1sen!2sbd"
+                        class="border-0 rounded w-100 h-100" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                <form method="POST" action="{% url 'contact'%}">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <div class="d-flex call-btn">
-                            <input type="email" name="email"
-                                class="form-control py-3 px-4 w-100 border-0 rounded-0 rounded-end rounded-pill"
-                                placeholder="Enter Your Email Address" required="Please enter a valid email" />
-                            <button type="submit" value="Search Now!"
-                                class="btn btn-primary border-0 rounded-pill rounded rounded-start px-5">Subscribe</button>
+                    <div class="rounded contact-form">
+                        <div class="mb-4">
+                            <input type="text" name="name" class="form-control p-3" placeholder="Your Name">
                         </div>
+                        <div class="mb-4">
+                            <input type="email" name="email" class="form-control p-3" placeholder="Your Email">
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="subject" class="form-control p-3" placeholder="Subject">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="w-100 form-control p-3" name="message" rows="6" cols="10"
+                                placeholder="Message"></textarea>
+                        </div>
+                        <button class="btn btn-primary border-0 py-3 px-4 rounded-pill" type="submit">Send
+                            Message</button>
                     </div>
                 </form>
             </div>
-            <div id="success_div" style="display: none;" class="col-lg-6 my-auto">
-                <div class="text-start mt-4">
-                    <h1 class="pb-4 text-white">Subcribed Successfuly</h1>
+        </div>
+        <div class="row g-4 wow fadeInUp" data-wow-delay=".3s">
+            <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                    <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3"
+                        style="width: 64px; height: 64px;">
+                        <i class="fa fa-share text-dark"></i>
+                    </div>
+                    <div class="ms-3 contact-link">
+                        <h4 class="text-dark">fallow Us</h4>
+                        <div class="d-flex justify-content-center">
+                            <a class="pe-2" href="{{myfooter.fb_link}}"><i class="fab fa-facebook-f text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.tiktok_link}}"><i class="fab fa-tiktok text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.instagram_link}}"><i class="fab fa-instagram text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.youtube_link}}"><i class="fab fa-youtube text-dark"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3"
+                        style="width: 64px; height: 64px;">
+                        <i class="fas fa-map-marker-alt text-dark"></i>
+                    </div>
+                    <div class="ms-3 contact-link">
+                        <h4 class="text-dark">Address</h4>
+                        <a href="#">
+                            <h5 class="text-dark d-inline fs-6">{{myfooter.address}}</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3"
+                        style="width: 74px; height: 64px;">
+                        <i class="fa fa-phone text-dark"></i>
+                    </div>
+                    <div class="ms-3 contact-link">
+                        <h4 class="text-dark">Call Us</h4>
+                        <a class="h6 text-dark fs-6" href="tel:{{myfooter.phone1}}">{{myfooter.phone1}}</a>
+                        <a class="h6 text-dark fs-6" href="tel:{{myfooter.phone1}}">{{myfooter.phone2}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3"
+                        style="width: 64px; height: 64px;">
+                        <i class="fa fa-envelope text-dark"></i>
+                    </div>
+                    <div class="ms-3 contact-link">
+                        <h4 class="text-dark">Email Us</h4>
+                        <a class="h5 text-dark fs-6" href="#">{{myfooter.email1}}</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <!-- Call To Action End -->
+<!-- Contact End -->
+
+
+<script>
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            const range = end - start;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const value = Math.min(start + Math.floor(progress / duration * range), end);
+                obj.innerText = value;
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+
+            window.requestAnimationFrame(step);
+        }
+
+        window.onload = function() {
+            animateValue("clients", 0, {{facts.clients}}, 2000);
+            animateValue("projects", 0, {{facts.projects}}, 2000);
+            animateValue("hours", 0, {{facts.hours_of_support}}, 2000);
+            animateValue("workers", 0, {{facts.hard_workers}}, 2000);
+        }
+    </script>
+ 
 
     {% endblock body %}

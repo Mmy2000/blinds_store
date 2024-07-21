@@ -977,3 +977,51 @@ form .form-control {
 .image-container:hover .read-more {
     transform: translateX(0%);
 }
+
+.facts-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+} */
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.facts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.fact-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.fact-number {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.fact-description {
+    font-size: 18px;
+    color: #333;
+}

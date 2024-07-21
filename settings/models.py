@@ -50,3 +50,45 @@ class Images(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Facts(models.Model):
+    clients = models.PositiveIntegerField()
+    projects = models.PositiveIntegerField()
+    hours_of_support = models.PositiveIntegerField()
+    hard_workers = models.PositiveIntegerField()
+    image = models.ImageField(_("image"), upload_to='factImages/' )
+
+    def __str__(self):
+        return str(self.id)
+    
+class OurClients(models.Model):
+    image = models.ImageField(_("image"), upload_to='clientImages/' )
+
+    class Meta:
+        verbose_name = _("Our Clients")
+        verbose_name_plural = _("Our Clients")
+
+    def __str__(self):
+        return str(self.id)
+    
+class OurRecentWork(models.Model):
+    image = models.ImageField(_("image"), upload_to='recentworkImages/' )
+
+    class Meta:
+        verbose_name = _("Our Recent Work")
+        verbose_name_plural = _("Our Recent Work")
+
+    def __str__(self):
+        return str(self.id)
+    
+class OurSkills(models.Model):
+    name = models.CharField(max_length=60)
+    percent = models.CharField(max_length=30)
+
+
+    class Meta:
+        verbose_name = _("Our Skills")
+        verbose_name_plural = _("Our Skills")
+
+    def __str__(self):
+        return self.name

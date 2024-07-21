@@ -6,22 +6,32 @@
 {% block body %}
 
 <!-- Page Header Start -->
-        <div class="container-fluid page-header py-5">
-            <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">Services</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item text-white" aria-current="page">{{service_detail.name}}</li>
-                    </ol>
-                </nav>
-            </div>
+<div class="container-fluid page-header py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Services</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item text-white" aria-current="page">{{service_detail.name}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<div class="container text-center py-5">
+    
+    <h1>{{service_detail.name}}</h1>
+    <p class="fs-5 mt-2">{{service_detail.description|safe}}</p>
+    <div class="row">
+    {% for image in service_detail.services_images.all %}
+    
+    <div class="col-md-3  g-4">
+        <div>
+            <img class="w-100" src="{{image.image.url}}">
         </div>
-        <!-- Page Header End -->
-         <div class="container text-center py-5">
-                <h1 >{{service_detail.name}}</h1>
-                <p>{{service_detail.description|safe}}</p>
-                
-            </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

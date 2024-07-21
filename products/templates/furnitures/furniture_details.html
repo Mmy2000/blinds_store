@@ -22,7 +22,7 @@
 <div class="container text-center py-5">
     <div class="row">
         <img class="w-100 commercial-img" src="{{furniture_details.image.url}}" alt="Image">
-        <p class="fs-5 mt-4" style="text-align: justify;">{{furniture_details.description|safe}}</p>
+        <p class="fs-5 mt-2" style="text-align: justify;">{{furniture_details.description|safe}}</p>
         {% for image in furniture_details.furniture_images.all %}
         <div class="col-md-3  g-4">
             <div>

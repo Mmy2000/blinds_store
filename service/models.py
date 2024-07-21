@@ -22,3 +22,14 @@ class Services(models.Model):
 
     def __str__(self):
         return self.name
+    
+class ServicesImages(models.Model):
+    services = models.ForeignKey(Services,related_name='services_images',on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='servicesimages/')
+
+    class Meta:
+        verbose_name = ("Services Images ")
+        verbose_name_plural = ("Services Images ")
+
+    def __str__(self):
+        return str(self.services)
