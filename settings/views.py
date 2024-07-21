@@ -2,7 +2,7 @@ from django.shortcuts import render
 from service.models import Services
 from products.models import Blinds , Curtains , Furniture , Accessories 
 from blog.models import Post
-from .models import NewsLitter , Facts , OurSkills
+from .models import NewsLitter , Facts , OurSkills , OurRecentWork
 from django.http import JsonResponse
 
 # Create your views here.
@@ -14,6 +14,7 @@ def home(request):
     furnitures = Furniture.objects.all()
     facts = Facts.objects.last()
     skills = OurSkills.objects.all()
+    works = OurRecentWork.objects.all()
     context = {
         'services':services,
         'blinds':blinds,
@@ -22,6 +23,7 @@ def home(request):
         'furnitures':furnitures,
         'facts':facts,
         'skills':skills,
+        'works':works,
     }
     return render(request , 'home.html' , context )
 
