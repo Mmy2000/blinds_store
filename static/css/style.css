@@ -1025,3 +1025,9 @@ form .form-control {
     font-size: 18px;
     color: #333;
 }
+.progress{
+    height: 35px !important;
+    border-radius: 5px;
+}
+
+.progress-bar{background-color: var(--primary);}

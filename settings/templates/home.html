@@ -10,7 +10,9 @@ Home
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             {% for image in images %}
-            <li data-bs-target="#carouselId" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="{{ forloop.counter0 }}"
+                class="{% if forloop.first %}active{% endif %}" aria-current="true"
+                aria-label="Slide {{ forloop.counter }}"></li>
             {% endfor %}
         </ol>
         <div class="carousel-inner" role="listbox">
@@ -22,18 +24,22 @@ Home
                         <h1 class="text-white mb-4 animated slideInDown">{{ image.title }}</h1>
                         <h6 class="text-white display-1 mb-4 animated slideInDown">{{image.description}}</h6>
                         <a href="" class="me-2">
-                            <a href="{% url 'services'%}" type="button" class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Read More</a>
+                            <a href="{% url 'services'%}" type="button"
+                                class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Read
+                                More</a>
                         </a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <button class="carousel-control-prev btn btn-primary border border-2 border-start-0 border-primary" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <button class="carousel-control-prev btn btn-primary border border-2 border-start-0 border-primary"
+            type="button" data-bs-target="#carouselId" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next btn btn-primary border border-2 border-end-0 border-primary" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <button class="carousel-control-next btn btn-primary border border-2 border-end-0 border-primary" type="button"
+            data-bs-target="#carouselId" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -86,7 +92,8 @@ Home
                     <div class="overlay">
                         <h2 class="title">{{service}}</h2>
                         <p class="fs-5 text-light  px-3 pt-2">{{service.short_description}}</p>
-                        <a href="{% url 'service_details' service.slug %}" class="btn btn-primary read-more">Read More</a>
+                        <a href="{% url 'service_details' service.slug %}" class="btn btn-primary read-more">Read
+                            More</a>
                     </div>
                 </div>
             </div>
@@ -163,34 +170,56 @@ Home
 </div>
 <!-- Blog End -->
 
-<section class="facts-section wow fadeInUp" data-wow-delay=".3s">
-        <div class="container wow fadeInUp" data-wow-delay=".3s">
-            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Facts
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Skills
             </h5>
-            <p class="fs-5 mt-2">Highly Qualified Designers and Management Team for Instant Support and Collaborative Stylish Solutions</p>
-            <div class="facts-grid wow fadeInUp" data-wow-delay=".3s">
-                <div class="fact-item">
-                    <h3 class="fact-number" id="clients">0</h3>
-                    <p class="fs-5">Clients</p>
-                </div>
-                <div class="fact-item">
-                    <h3 class="fact-number" id="projects">0</h3>
-                    <p class="fs-5">Projects</p>
-                </div>
-                <div class="fact-item">
-                    <h3 class="fact-number" id="hours">0</h3>
-                    <p class="fs-5">Hours of Support</p>
-                </div>
-                <div class="fact-item">
-                    <h3 class="fact-number" id="workers">0</h3>
-                    <p class="fs-5">Hard Workers</p>
-                </div>
-            </div>
-            <div class="w-75 mx-auto mt-2">
-                <img class="w-100" src="{{facts.image.url}}">
+            <p class="fs-5 mt-2 px-5">Trendies is the largest management company in the Designing Wallspaper, Decoration, Styling Curtains and Furnicture Decoration and more than 20 additional Desing and art services for every client. But we do more than just manage Design and Decorate for commercial facilities – we pride ourselves on being a partner that helps you improve the quality of luxury life spending!</p>
+        </div>
+        {% for skill in skills %}
+        
+        <div class="progress mb-3 wow fadeInUp" data-wow-delay=".3s" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar d-flex justify-content-between align-items-center flex-row  text-dark" style="width: {{skill.percent}}%">
+                <h6 class="ms-3 mt-2">{{skill.name}}</h6>
+                <h6 class="me-3 mt-2">{{skill.percent}}%</h6>
             </div>
         </div>
-    </section>
+        {% endfor %}
+        
+    </div>
+</div>
+
+<section class="facts-section wow fadeInUp" data-wow-delay=".3s">
+    <div class="container wow fadeInUp" data-wow-delay=".3s">
+        <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Facts
+        </h5>
+        <p class="fs-5 mt-2">Highly Qualified Designers and Management Team for Instant Support and Collaborative
+            Stylish Solutions</p>
+        <div class="facts-grid wow fadeInUp" data-wow-delay=".3s">
+            <div class="fact-item">
+                <h3 class="fact-number" id="clients">0</h3>
+                <p class="fs-5">Clients</p>
+            </div>
+            <div class="fact-item">
+                <h3 class="fact-number" id="projects">0</h3>
+                <p class="fs-5">Projects</p>
+            </div>
+            <div class="fact-item">
+                <h3 class="fact-number" id="hours">0</h3>
+                <p class="fs-5">Hours of Support</p>
+            </div>
+            <div class="fact-item">
+                <h3 class="fact-number" id="workers">0</h3>
+                <p class="fs-5">Hard Workers</p>
+            </div>
+        </div>
+        <div class="w-75 mx-auto mt-2">
+            <img class="w-100" src="{{facts.image.url}}">
+        </div>
+    </div>
+</section>
 
 <!-- Contact Start -->
 <div class="container-fluid py-5">
@@ -245,8 +274,10 @@ Home
                         <div class="d-flex justify-content-center">
                             <a class="pe-2" href="{{myfooter.fb_link}}"><i class="fab fa-facebook-f text-dark"></i></a>
                             <a class="px-2" href="{{myfooter.tiktok_link}}"><i class="fab fa-tiktok text-dark"></i></a>
-                            <a class="px-2" href="{{myfooter.instagram_link}}"><i class="fab fa-instagram text-dark"></i></a>
-                            <a class="px-2" href="{{myfooter.youtube_link}}"><i class="fab fa-youtube text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.instagram_link}}"><i
+                                    class="fab fa-instagram text-dark"></i></a>
+                            <a class="px-2" href="{{myfooter.youtube_link}}"><i
+                                    class="fab fa-youtube text-dark"></i></a>
                         </div>
                     </div>
                 </div>
@@ -297,31 +328,31 @@ Home
 
 
 <script>
-        function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            const range = end - start;
-            let startTime = null;
+    function animateValue(id, start, end, duration) {
+        const obj = document.getElementById(id);
+        const range = end - start;
+        let startTime = null;
 
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = timestamp - startTime;
-                const value = Math.min(start + Math.floor(progress / duration * range), end);
-                obj.innerText = value;
-                if (progress < duration) {
-                    window.requestAnimationFrame(step);
-                }
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const value = Math.min(start + Math.floor(progress / duration * range), end);
+            obj.innerText = value;
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
             }
-
-            window.requestAnimationFrame(step);
         }
 
-        window.onload = function() {
-            animateValue("clients", 0, {{facts.clients}}, 2000);
-            animateValue("projects", 0, {{facts.projects}}, 2000);
-            animateValue("hours", 0, {{facts.hours_of_support}}, 2000);
-            animateValue("workers", 0, {{facts.hard_workers}}, 2000);
-        }
-    </script>
- 
+        window.requestAnimationFrame(step);
+    }
 
-    {% endblock body %}
+    window.onload = function () {
+        animateValue("clients", 0, {{facts.clients}}, 2000);
+        animateValue("projects", 0, {{facts.projects}}, 2000);
+        animateValue("hours", 0, {{facts.hours_of_support}}, 2000);
+        animateValue("workers", 0, {{facts.hard_workers}}, 2000);
+    }
+</script>
+
+
+{% endblock body %}
