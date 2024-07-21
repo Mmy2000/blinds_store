@@ -3,7 +3,14 @@
 {% block title %}
 Home
 {% endblock title %}
+
 {% block body %}
+<div class="social-icons">
+        <a href="https://wa.me/{{myfooter.phone1}}" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="{{myfooter.fb_link}}" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="{{myfooter.instagram_link}}" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="{{myfooter.tiktok_link}}" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
 
 <!-- Carousel Start -->
 <div class="container-fluid carousel px-0 mb-5 pb-5">
@@ -214,6 +221,26 @@ Home
         </div>
     </div>
 </section>
+{% if clients %}
+<div class="container-fluid py-5">
+    <div class="container py-2">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Clients
+            </h5>
+        <div id="clientCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner-2">
+                {% for client in clients %}
+                    <div class="carousel-item-2 {% if forloop.first %}active{% endif %}">
+                        <img src="{{ client.image.url }}" alt="Client {{ forloop.counter }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif %}
 
 <!-- Contact Start -->
 <div class="container-fluid py-5">
@@ -348,5 +375,7 @@ Home
     }
 </script>
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {% endblock body %}
