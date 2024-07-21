@@ -48,9 +48,9 @@
                 <div class="d-flex align-items-center flex-shrink-0 topbar-info">
                     <a href="#" class="me-4 text-secondary"><i
                             class="fas fa-map-marker-alt me-2 text-dark"></i>{{myfooter.address}}</a>
-                    <a href="#" class="me-4 text-secondary"><i
+                    <a href="tel:{{myfooter.phone1}}" class="me-4 text-secondary"><i
                             class="fas fa-phone-alt me-2 text-dark"></i>{{myfooter.phone1}}</a>
-                    <a href="#" class="me-4 text-secondary"><i
+                    <a href="tel:{{myfooter.phone2}}" class="me-4 text-secondary"><i
                             class="fas fa-phone-alt me-2 text-dark"></i>{{myfooter.phone2}}</a>
                     <a href="#" class="text-secondary"><i
                             class="fas fa-envelope me-2 text-dark"></i>{{myfooter.email1}}</a>
@@ -60,7 +60,8 @@
                     <a href="{{myfooter.fb_link}}" class="me-4"><i class="fab fa-facebook-f text-dark"></i></a>
                     <a href="{{myfooter.tiktok_link}}" class="me-4"><i class="fa-brands fa-tiktok text-dark"></i></a>
                     <a href="{{myfooter.instagram_link}}" class="me-4"><i class="fab fa-instagram text-dark"></i></a>
-                    <a href="{{myfooter.youtube_link}}" class=""><i class="fa-brands fa-youtube text-dark"></i></a>
+                    <a href="{{myfooter.youtube_link}}" class="me-4"><i class="fa-brands fa-youtube text-dark"></i></a>
+                    <a href="tel:{{myfooter.phone1}}" class=""><i class="fa-brands fa-whatsapp text-dark"></i></a>
                 </div>
             </div>
         </div>
@@ -134,14 +135,7 @@
                                     <a href="{% url 'contact'%}" class="dropdown-item">Contact</a>
                                 </div>
                             </div>
-                        {% comment %} <a href="{% url 'services'%}"
-                            class="nav-item nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
-                        <a href="{% url 'post_list'%}"
-                            class="nav-item nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
-                        <a href="{% url 'about'%}"
-                            class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
-                        <a href="{% url 'contact'%}"
-                            class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a> {% endcomment %}
+                        
                     </div>
                 </div>
             </nav>
@@ -190,7 +184,7 @@
                         <h4 class="text-white fw-bold mb-4">Contact Us</h4>
                         <a href="" class="btn btn-link w-100 text-start ps-0 pb-3 border-bottom rounded-0"><i
                                 class="fa fa-map-marker-alt me-3"></i>{{myfooter.address}}</a>
-                        <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0">
+                        <a href="tel:{{myfooter.phone1}}" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0">
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fa fa-phone-alt me-3"></i>{{ myfooter.phone1 }}
