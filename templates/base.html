@@ -124,16 +124,24 @@
                             </div>
                         </div>
                         <a href="{% url 'accessory_list'%}"
-                            class="nav-item nav-link {% if request.path == '/products/commercial/' %}active{% endif %} ">Accessories</a>
-                        
-                        <a href="{% url 'services'%}"
+                            class="nav-item nav-link {% if request.path == '/products/accessories/' %}active{% endif %} ">Accessories</a>
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Others</a>
+                                <div class="dropdown-menu m-0 bg-primary">
+                                    <a href="{% url 'services'%}" class="dropdown-item">Services</a>
+                                    <a href="{% url 'post_list'%}" class="dropdown-item">Blog</a>
+                                    <a href="{% url 'about'%}" class="dropdown-item">About</a>
+                                    <a href="{% url 'contact'%}" class="dropdown-item">Contact</a>
+                                </div>
+                            </div>
+                        {% comment %} <a href="{% url 'services'%}"
                             class="nav-item nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
                         <a href="{% url 'post_list'%}"
                             class="nav-item nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
                         <a href="{% url 'about'%}"
                             class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
                         <a href="{% url 'contact'%}"
-                            class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+                            class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a> {% endcomment %}
                     </div>
                 </div>
             </nav>
