@@ -1031,3 +1031,10 @@ form .form-control {
 }
 
 .progress-bar{background-color: var(--primary);}
+.whatsicon{
+  position: fixed;
+  transition: all 0.3s;
+    bottom: 20px; /* Adjust as needed */
+    right: 100px; /* Adjust as needed */
+    z-index: 99999999999999; /* Adjust to make sure it's above other content */
+}
