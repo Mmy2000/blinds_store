@@ -1034,9 +1034,20 @@ form .form-control {
 .whatsicon{
   position: fixed;
   transition: all 0.3s;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 30px; /* Adjust as needed */
     right: 100px; /* Adjust as needed */
     z-index: 99999999999999; /* Adjust to make sure it's above other content */
+    background-color: #25d366 !important;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.whatsicon:hover{
+    transform: scale(1.1);
 }
 .carousel-item-2 img {
             max-width: 150px;
