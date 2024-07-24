@@ -19,6 +19,7 @@ motorizedblinds
         <!-- Page Header End -->
          <div class="container  py-5">
     <div class="row">
+        <h1 class="text-center">{{motorizedblind.title}}</h1>
         <img class="w-100 commercial-img" src="{{motorizedblind.image.url}}" alt="Image">
         <p class="fs-5 mt-4" style="text-align: justify;">{{motorizedblind.description|safe}}</p>
         {% for image in motorizedblind.motorizedblinds_images.all %}
