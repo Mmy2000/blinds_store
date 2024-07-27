@@ -100,7 +100,10 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="nav-item dropdown">
+                        <a href="{% url 'curtains_list'%}"
+                            class="nav-item nav-link {% if request.path == '/products/curtains/' %}active{% endif %} ">CURTAINS
+                            </a>
+                        {% comment %} <div class="nav-item dropdown">
                             <a href="{% url 'curtains_list'%}"
                                 class="nav-link {% if request.path == '/products/curtains/' %}active{% endif %} dropdown-toggle"
                                 data-bs-toggle="dropdown">CURTAINS</a>
@@ -111,7 +114,7 @@
                                     class="dropdown-item text-center">{{curtain.title}}</a>
                                 {% endfor %}
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                         <div class="nav-item dropdown">
                             <a href="{% url 'furniture_list'%}"
                                 class="nav-link {% if request.path == '/products/furnitures/' %}active{% endif %} dropdown-toggle"

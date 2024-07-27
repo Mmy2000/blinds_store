@@ -18,11 +18,11 @@ def blinds_details(request , slug):
     return render(request , 'blinds/blinds_details.html' , context)
 
 def curtains_list(request):
-    curtains = Curtains.objects.all()
+    curtains = Curtains.objects.last()
     context = {
         'curtains':curtains
     }
-    return render(request , 'curtains/curtains.html' , context)
+    return render(request , 'curtains/curtains_details.html' , context)
 
 def curtains_details(request , slug):
     curtains_detail = Curtains.objects.get(slug=slug)

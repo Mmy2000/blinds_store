@@ -11,7 +11,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item text-white" aria-current="page">{{curtains_detail.title}}</li>
+                        <li class="breadcrumb-item text-white" aria-current="page">{{curtains.title}}</li>
                     </ol>
                 </nav>
             </div>
@@ -19,10 +19,10 @@
         <!-- Page Header End -->
          <div class="container  py-5">
     <div class="row">
-        <h1 class="text-center">{{curtains_detail.title}}</h1>
-        <img class="w-100 commercial-img" src="{{curtains_detail.image.url}}" alt="Image">
-        <p class="fs-5 mt-4" style="text-align: justify;">{{curtains_detail.description|safe}}</p>
-        {% for image in curtains_detail.curtains_images.all %}
+        <h1 class="text-center">{{curtains.title}}</h1>
+        <img class="w-100 commercial-img" src="{{curtains.image.url}}" alt="Image">
+        <p class="fs-5 mt-4" style="text-align: justify;">{{curtains.description|safe}}</p>
+        {% for image in curtains.curtains_images.all %}
         <div class="col-md-3  g-4">
             <div>
                 <img class="w-100"src="{{image.image.url}}">
