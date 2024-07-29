@@ -33,3 +33,6 @@ def newsletters(request):
     email = request.POST.get('email')
     NewsLitter.objects.create(email=email)
     return JsonResponse({'done':'done'})
+
+def custom_404_view(request, exception=None):
+    return render(request, '404.html', {}, status=404)
